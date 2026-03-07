@@ -4,13 +4,18 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "./language-provider";
 import { Button } from "./ui/button";
-import { Moon, Sun, Feather, Phone } from "lucide-react";
+import { Moon, Sun, Feather, Languages } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const { setTheme, theme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/10 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/40">
@@ -55,52 +60,34 @@ export function Header() {
         <div className="flex items-center gap-4">
           
           {/* Toggles Group */}
-          <div className="flex items-center gap-3">
-            {/* Language Pill */}
-            <div className="flex items-center rounded-full border border-border/20 bg-muted/20 p-1 backdrop-blur-md">
+          <div className="flex items-center gap-5 mr-4 ml-4">
+            
+            {/* Theme Toggle */}
+            {mounted ? (
               <button
-                onClick={() => setLanguage("en")}
-                className={cn(
-                  "rounded-full px-3 py-1 text-xs font-semibold uppercase transition-all",
-                  language === "en" ? "bg-muted/50 text-foreground" : "text-muted-foreground hover:text-foreground"
-                )}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="text-foreground hover:opacity-70 transition-opacity flex items-center justify-center p-1"
+                aria-label="Toggle Theme"
               >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage("he")}
-                className={cn(
-                  "rounded-full px-3 py-1 text-xs font-semibold uppercase transition-all",
-                  language === "he" ? "bg-muted/50 text-foreground" : "text-muted-foreground hover:text-foreground"
+                {theme === "dark" ? (
+                  <Moon className="h-[22px] w-[22px]" />
+                ) : (
+                  <Sun className="h-[22px] w-[22px]" />
                 )}
-              >
-                HE
               </button>
-            </div>
+            ) : (
+              <div className="w-[30px] h-[30px]" />
+            )}
 
-            {/* Theme Pill */}
-            <div className="flex items-center rounded-full border border-border/20 bg-muted/20 p-1 backdrop-blur-md">
-              <button
-                onClick={() => setTheme("dark")}
-                className={cn(
-                  "rounded-full p-1.5 transition-all text-muted-foreground hover:text-foreground",
-                  theme === "dark" ? "bg-muted/50 text-foreground" : ""
-                )}
-                aria-label="Dark Mode"
-              >
-                <Moon className="h-3.5 w-3.5" />
-              </button>
-              <button
-                onClick={() => setTheme("light")}
-                className={cn(
-                  "rounded-full p-1.5 transition-all text-muted-foreground hover:text-foreground",
-                  theme === "light" ? "bg-muted/50 text-foreground" : ""
-                )}
-                aria-label="Light Mode"
-              >
-                <Sun className="h-3.5 w-3.5" />
-              </button>
-            </div>
+            {/* Language Toggle */}
+            <button
+              onClick={() => setLanguage(language === "en" ? "he" : "en")}
+              className="text-foreground hover:opacity-70 transition-opacity flex items-center justify-center p-1"
+              aria-label="Toggle Language"
+            >
+              <Languages className="h-[22px] w-[22px]" />
+            </button>
+            
           </div>
 
           {/* Contact Button */}
