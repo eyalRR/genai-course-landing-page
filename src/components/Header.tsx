@@ -19,7 +19,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/10 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/40">
-      <div className="container mx-auto flex h-20 items-center justify-between px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-6" dir="ltr">
         
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -57,7 +57,7 @@ export function Header() {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4" dir="ltr">
           
           {/* Toggles Group */}
           <div className="flex items-center gap-5 mr-4 ml-4">
@@ -92,7 +92,7 @@ export function Header() {
 
           {/* Contact Button */}
           <Button 
-            className="rounded-lg bg-red-500/90 text-white font-bold px-6 border border-red-400/30 hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)]"
+            className="rounded-lg bg-red-500/90 text-white font-bold px-6 min-w-[120px] justify-center border border-red-400/30 hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)]"
             asChild
           >
             <a href="#contact">
