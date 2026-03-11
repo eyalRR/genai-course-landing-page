@@ -33,6 +33,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const handleSetLanguage = (lang: Language) => {
+    // Scroll to top before the re-render so reveal animations start fresh
+    window.scrollTo({ top: 0, behavior: "instant" });
     setLanguage(lang);
     localStorage.setItem("language", lang);
     document.documentElement.dir = lang === "he" ? "rtl" : "ltr";

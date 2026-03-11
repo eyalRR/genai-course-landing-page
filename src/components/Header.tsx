@@ -4,8 +4,9 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "./language-provider";
 import { Button } from "./ui/button";
-import { Moon, Sun, Feather, Languages } from "lucide-react";
+import { Moon, Sun, Languages } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -19,25 +20,22 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/10 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/40">
-      <div className="container mx-auto flex h-20 items-center justify-between px-6" dir="ltr">
+      <div className="container mx-auto flex h-20 md:h-28 items-center justify-between px-6" dir="ltr">
         
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-[1px]">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-background/90 backdrop-blur-sm">
-              <Feather className="h-5 w-5 text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-pink-400" stroke="url(#logo-gradient)" />
-              <svg width="0" height="0">
-                <linearGradient id="logo-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-                  <stop stopColor="#f472b6" offset="0%" />
-                  <stop stopColor="#c084fc" offset="50%" />
-                  <stop stopColor="#818cf8" offset="100%" />
-                </linearGradient>
-              </svg>
-            </div>
-          </div>
+          <Link href="/" className="shrink-0 block relative w-16 h-16 md:w-24 md:h-24">
+            <Image 
+              src="/logo.png" 
+              alt="Creative GenAI Course Logo" 
+              fill
+              sizes="(min-width: 768px) 96px, 64px"
+              className="object-contain"
+            />
+          </Link>
           <Link href="/" className="flex flex-col select-none">
-            <span className="font-bold text-2xl leading-none text-foreground tracking-tight">GenAI</span>
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">קורס Generative</span>
+            <span className="font-bold text-xl leading-none text-foreground tracking-tight">{t("logo.title")}</span>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">{t("logo.subtitle")}</span>
           </Link>
         </div>
 
@@ -51,8 +49,8 @@ export function Header() {
             {t("nav.what_you_will_learn")}
           </Link>
           <span className="text-border/40 select-none">|</span>
-          <Link href="#prerequisites" className="px-4 py-2 transition-colors hover:text-foreground">
-            {t("nav.prerequisites")}
+          <Link href="#faq" className="px-4 py-2 transition-colors hover:text-foreground">
+            {t("nav.faq")}
           </Link>
         </nav>
 
@@ -65,7 +63,21 @@ export function Header() {
             {/* Theme Toggle */}
             {mounted ? (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={(e) => {
+                  const rect = (e.currentTarget as HTMLButtonElement).getBoundingClientRect();
+                  const x = Math.round(rect.left + rect.width / 2);
+                  const y = Math.round(rect.top + rect.height / 2);
+                  document.documentElement.style.setProperty('--theme-toggle-x', `${x}px`);
+                  document.documentElement.style.setProperty('--theme-toggle-y', `${y}px`);
+
+                  const next = theme === 'dark' ? 'light' : 'dark';
+                  if (!('startViewTransition' in document)) {
+                    setTheme(next);
+                    return;
+                  }
+                  (document as Document & { startViewTransition: (cb: () => void) => void })
+                    .startViewTransition(() => setTheme(next));
+                }}
                 className="text-foreground hover:opacity-70 transition-opacity flex items-center justify-center p-1"
                 aria-label="Toggle Theme"
               >

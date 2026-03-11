@@ -1,8 +1,11 @@
 {
   "nav.our_approach": "Our Approach",
   "nav.what_you_will_learn": "Syllabus",
-  "nav.prerequisites": "Prerequisites",
+  "nav.faq": "FAQ",
   "nav.contact": "Contact Us",
+  
+  "logo.title": "Creative GenAI",
+  "logo.subtitle": "Coding Course",
   
   "hero.badge": "Enrollment is now open",
   "hero.title.part1": "Don't settle for others' tools.",
