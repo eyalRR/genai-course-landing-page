@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://creativegenai.co.il/sitemap.xml",
-    host: "https://creativegenai.co.il",
+    sitemap: "https://creative-gen-ai.netlify.app/sitemap.xml",
+    host: "https://creative-gen-ai.netlify.app",
   };
 }

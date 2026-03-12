@@ -12,7 +12,7 @@ export function CourseJsonLd() {
     name: "Creative Generative AI Coding Course",
     description:
       "A practical 12-week boutique course (up to 5 participants) covering Python, OpenAI API, Prompt Engineering, Flux image generation, LoRA fine-tuning, video generation, and building AI interfaces with Gradio.",
-    url: "https://creativegenai.co.il",
+    url: "https://creative-gen-ai.netlify.app",
     inLanguage: ["he", "en"],
     educationalLevel: "Beginner",
     courseMode: ["blended", "onsite"],

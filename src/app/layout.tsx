@@ -18,7 +18,7 @@ const rubik = Rubik({
 });
 
 // ─── Replace with your real domain before deploying ─────────────────────────
-const SITE_URL = "https://creativegenai.co.il";
+const SITE_URL = "https://creative-gen-ai.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
