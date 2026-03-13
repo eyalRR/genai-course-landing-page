@@ -4,7 +4,7 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "./language-provider";
 import { Button } from "./ui/button";
-import { Moon, Sun, Languages } from "lucide-react";
+import { Moon, Sun, Languages, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -104,11 +104,13 @@ export function Header() {
 
           {/* Contact Button */}
           <Button 
-            className="rounded-lg bg-red-500/90 text-white font-bold px-6 min-w-[120px] justify-center border border-red-400/30 hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)]"
+            className="rounded-lg bg-red-500/90 text-white font-bold w-10 h-10 p-0 md:w-auto md:h-auto md:px-6 md:py-2 md:min-w-[120px] flex items-center justify-center border border-red-400/30 hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)]"
             asChild
+            aria-label={t("nav.contact")}
           >
-            <a href="#contact">
-              {t("nav.contact")}
+            <a href="#contact" className="flex items-center justify-center gap-2">
+              <span className="hidden md:inline">{t("nav.contact")}</span>
+              <Phone className="w-5 h-5 md:hidden" />
             </a>
           </Button>
 
