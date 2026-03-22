@@ -34,7 +34,12 @@ export function Header() {
             />
           </Link>
           <Link href="/" className="flex flex-col select-none">
-            <span className="font-bold text-xl leading-none text-foreground tracking-tight">{t("logo.title")}</span>
+            <span 
+              className="font-bold text-xl leading-none text-foreground tracking-tight"
+              style={{ fontFamily: 'var(--font-inter)' }}
+            >
+              {t("logo.title")}
+            </span>
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">{t("logo.subtitle")}</span>
           </Link>
         </div>
