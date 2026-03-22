@@ -3,16 +3,13 @@
   "nav.what_you_will_learn": "Syllabus",
   "nav.faq": "FAQ",
   "nav.contact": "Contact Us",
-  
   "logo.title": "Creative GenAI",
   "logo.subtitle": "Coding Course",
-  
   "hero.badge": "Enrollment is now open",
   "hero.title.part1": "Don't settle for others' tools.",
   "hero.title.part2": "Learn to code your vision with",
   "hero.subtitle": "A practical 12-week course, in boutique groups of up to 5 participants. From basic Python coding to creating complex AI apps, independent interfaces, text, audio, video, and spectacular images.",
-  "hero.cta.primary": "For details and matching – Let's talk on WhatsApp",
-  
+  "hero.cta.primary": "For details and matching – Let's talk",
   "features.title": "Why learn to build it yourself?",
   "features.card1.title": "Freedom from existing tools",
   "features.card1.desc": "End users are limited to interfaces other companies built (Wrappers). Here you'll learn the architecture behind the scenes and build your own dedicated AI tools.",
@@ -20,38 +17,30 @@
   "features.card2.desc": "Python is not just a programming language, it's your new brush. You will learn coding at a basic and practical level to connect APIs and breathe life into complex ideas.",
   "features.card3.title": "Ultimate control of your product",
   "features.card3.desc": "From realistic text & audio generation to custom models (LoRA) and video. Get the architectural foundation to create your own innovative projects.",
-  
   "syllabus.title": "Syllabus - From Foundation to Canvas",
   "syllabus.part1.title": "Introduction to Python",
   "syllabus.part1.tag": "Foundation for independent tools",
   "syllabus.part1.desc": "Variables, data types, loops, functions, file handling, and API connections (Requests).",
-  
   "syllabus.part2.title": "Working with OpenAI API",
   "syllabus.part2.tag": "Full control of the engine",
   "syllabus.part2.desc": "Text generation, image generation, speech-to-text (Whisper), text-to-speech (TTS), vision capabilities, chaining requests, and structured outputs.",
-
   "syllabus.part3.title": "Prompt Engineering (Claude & Perplexity)",
   "syllabus.part3.tag": "The Art of communicating with machines",
   "syllabus.part3.desc": "Advanced prompt engineering principles, parsing complex documents (PDFs), transcription, and real-time streaming data.",
-  
   "syllabus.part4.title": "Creative generation with Flux, LoRA & Video",
   "syllabus.part4.tag": "The beating heart of art",
   "syllabus.part4.desc": "Working with Flux model for high-end image generation, Fine-Tuning using LoRAs, and advanced video generation techniques.",
-  
   "syllabus.part5.title": "AI Coding Tools & Building Interfaces",
   "syllabus.part5.tag": "Bringing the project to life",
   "syllabus.part5.desc": "Using GitHub Copilot and Cline for rapid coding. Building interactive UIs and chatbots easily with the Gradio environment.",
-  
   "syllabus.part6.title": "Final Project",
   "syllabus.part6.tag": "Your Portfolio",
   "syllabus.part6.desc": "Building a full Generative AI solution, from scratch to a working interface, integrating all tools learned in the course.",
-  
   "prerequisites.title": "What do you need to start?",
   "prerequisites.item1": "Python 3.6+ installed.",
   "prerequisites.item2": "Jupyter Notebook environment.",
   "prerequisites.item3": "Accounts and API keys for OpenAI, Claude, and Perplexity.",
   "prerequisites.item4": "A laptop and a curiosity to create.",
-  
   "testimonials.title": "What our graduates say",
   "testimonials.item1.quote": "I arrived with zero coding experience. After the course I generate images and audio for campaigns on my own. I save thousands a month.",
   "testimonials.item1.name": "Daniel Cohen",
@@ -65,7 +54,6 @@
   "testimonials.item3.name": "Hen Peled",
   "testimonials.item3.role": "AI Enthusiastic",
   "testimonials.item3.initials": "HP",
-
   "faq.title": "Questions? We have answers!",
   "faq.q1": "Who is this course for?",
   "faq.a1": "The course is suitable for beginners and anyone who wants to learn Generative AI in a practical way. No prior coding experience required.",
@@ -79,9 +67,7 @@
   "faq.a5": "Not at all. The course starts from absolute zero. All you need is a laptop and the desire to learn.",
   "faq.q6": "What do I need to install before the course?",
   "faq.a6": "Nothing! In the first session we’ll set up your environment together, install Python and Jupyter, and create all the required API accounts.",
-
   "price.label": "Investment",
-
   "footer.title": "Let's check if it's right for you",
   "footer.desc": "To maintain personal attention and practical learning, our groups are limited to 5 participants. There is no automated registration form here - I want to hear about your background and ensure the course will give you maximum value.",
   "footer.cta.whatsapp": "Send me a message on WhatsApp",
